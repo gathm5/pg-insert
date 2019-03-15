@@ -1,0 +1,17 @@
+{
+  "name": "pg-insert-easy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pg-insert.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2"
+  }
+}
