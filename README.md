@@ -45,8 +45,14 @@ const sampleData = [{
 
 const createdDML = bulk.insert(sampleData);
 
+console.log(createdDML);
+
 /*
-* console.log(createdDML)
-* 
+INSERT INTO user_table (user_id, created_at, meta_data) VALUES ('asdf3234sdf9823hk9h', '2019-03-14 20:46:01', '{"key":"any value","numberValue":1000}'), ('j3ljsdfj20o23k9sd', '2019-03-14 20:46:01', '{"dummy":23949,"test":"any data"}')
 */
 ~~~
+___
+## Notes
+This library is useful only to create Bulk Insert statements or insert statements only. Schema creation could be handled directly by a database DBA or using other libraries like node-postgres, sequelize, etc (Sequelize would support migration).
+
+This library has no other dependencies and is written in pure javascript and is useful to copy large set of data where `/copy` cannot be used to copy data.
