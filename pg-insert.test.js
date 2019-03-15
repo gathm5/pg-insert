@@ -33,7 +33,6 @@ describe('Create Bulk Insert DML Statement', () => {
             const bulk = new Bulk('users', columns);
             const stmt = bulk.insert(input);
             expect(stmt).to.be.an('string');
-            console.log('OUTPUT:::', stmt);
         });
     });
 });

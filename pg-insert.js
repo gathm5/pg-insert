@@ -17,13 +17,13 @@ class TypeDate {
         }
     }
     getDateOnly() {
-        return `${this._yr()}-${this._mn()}-${this._dt}`;
+        return `'${this._yr()}-${this._mn()}-${this._dt()}'`;
     }
     getTimeOnly() {
-        return `${this._hr()}:${this._min()}:${this._sec()}`;
+        return `'${this._hr()}:${this._min()}:${this._sec()}'`;
     }
     getTimestamp() {
-        return `${this.getDateOnly()} ${this.getTimeOnly()}`;
+        return `'${this.getDateOnly()} ${this.getTimeOnly()}'`;
     }
     _yr() {
         return this.date.getFullYear();
