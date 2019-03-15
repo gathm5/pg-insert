@@ -195,7 +195,7 @@ class Column {
                     this._error(value);
                 }
                 try {
-                    return JSON.stringify(value);
+                    return this._strHelper(JSON.stringify(value));
                 } catch (e) {
                     if (this.required) {
                         this._error(value, e.message);
