@@ -200,7 +200,7 @@ class Column {
                     if (this.required) {
                         this._error(value, e.message);
                     }
-                    return 'NULL';
+                    return this.defaultValue || 'NULL';
                 }
             case Type.DateOnly:
             case Type.TimeOnly:
@@ -213,7 +213,7 @@ class Column {
                     if (this.required) {
                         this._error(value);
                     }
-                    return 'NULL';
+                    return this.defaultValue || 'NULL';
                 }
             default:
                 return this._strHelper(String(value));
@@ -223,7 +223,7 @@ class Column {
         throw Error(`The 'Required' column '${this.name}' is of ${this.dataType} type and is provided with value '${value}'. ${appendStack}`);
     }
     _strHelper(str, length) {
-        if (!str) return 'NULL';
+        if (!str) return this.defaultValue || 'NULL';
         return `'${(str.slice(0, length || undefined)).replace(/\'/g, "\'")}'`;
     }
 }
