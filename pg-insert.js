@@ -16,14 +16,16 @@ class TypeDate {
                 return this.getTimestamp();
         }
     }
-    getDateOnly() {
-        return `'${this._yr()}-${this._mn()}-${this._dt()}'`;
+    getDateOnly(noQuote = false) {
+        const combined = `${this._yr()}-${this._mn()}-${this._dt()}`;
+        return noQuote ? combined : `'${combined}'`;
     }
-    getTimeOnly() {
-        return `'${this._hr()}:${this._min()}:${this._sec()}'`;
+    getTimeOnly(noQuote = false) {
+        const combined = `${this._hr()}:${this._min()}:${this._sec()}`;
+        return noQuote ? combined : `'${combined}'`;
     }
     getTimestamp() {
-        return `'${this.getDateOnly()} ${this.getTimeOnly()}'`;
+        return `'${this.getDateOnly(1)} ${this.getTimeOnly(1)}'`;
     }
     _yr() {
         return this.date.getFullYear();
